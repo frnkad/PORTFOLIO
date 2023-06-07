@@ -1,7 +1,7 @@
 # PORTFOLIO
 
 SQL Databases 
-  - PIZZA ORDERING - Utilize query and subquery to analyze data
+  - PIZZA ORDERING.gc - Utilize query and subquery to analyze data
 
 Python 
   - Apply Pandas to analyze sale of department store
