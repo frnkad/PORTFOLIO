@@ -1,0 +1,98 @@
+print("Get start to order pizza")
+#Q1
+print("How many pizza do you want to order?")
+action_total <-  as.numeric(readLines("stdin" , n=1))
+
+total_price_pizza <- 0
+n <- 0
+while
+  (n < action_total) {
+  n <- n+1
+#Q2
+print("Which pizza would you like to order?")
+print("1.Peperoni, 2.Margherita, 3.Truffle, 4.Prama ham")
+  
+action_pizza <- as.numeric(readLines("stdin" , n=1))
+pizza_1 <- list(id    = 1,
+                pizza = "peperoni",
+                price = 300)
+pizza_2 <- list(id    = 2,
+                pizza = "margherita",
+                price = 250)
+pizza_3 <- list(id    = 3,
+                pizza = "truffle",
+                price = 350)
+pizza_4 <- list(id    = 4,
+                pizza = "prama ham",
+                price = 400)
+pizza <- c("peperoni","margherita","truffle","prama ham")
+price_pizza  <- c(300,250,350,400)
+if (action_pizza==1 | action_pizza==2 | action_pizza==3 | action_pizza==4) 
+  {print(paste("OK,", pizza[action_pizza]))
+  } 
+  else {print("We do not have this pizza, Please try again.")}
+total_price_pizza <- total_price_pizza + price_pizza[action_pizza]
+}
+#print(total_price_pizza)
+
+#Q3
+total_price_side_dish <- 0
+print("Do you want side dish?")
+print("1.yes, 2.no")
+action_sidedish <- readLines("stdin", n=1)
+if (action_sidedish == 1) {
+  print("1.salad 2.pasta 3.buffalo wing")
+  side_dish <- c("salad","pasta","buffalo wing")
+  side_dish_price <- c(160,210,180)
+  action_sidedish_order <- readLines("stdin", n=1)
+  total_side_dish <- side_dish_price[as.numeric(action_sidedish_order)]
+} else {total_side_dish <- 0}
+
+#print(total_side_dish)
+
+
+#Q4
+print("Do you want to delivery or self pickup")
+print("1.Delivery, 2.Self pickup")
+print("If order price more than 500, free delivery")
+action_delivery <- readLines("stdin", n=1)
+delivery <- c("Delivery","Self pickup")
+
+#Q5
+total_price_order <- as.numeric(total_price_pizza) + total_side_dish
+if (total_price_order > 499) {
+  print(paste("Total price:", total_price_order))
+  print("free delivery")
+} else {
+  print(paste("Price:", as.numeric(total_price_pizza) + total_side_dish))
+  print("delivery fee 50")
+  print(paste("Total Price:", as.numeric(total_price_pizza) + total_side_dish+50))
+}
+
+#Q6fe
+print("Please inform your address to enjoy eating the pizza")
+print("Name")
+name <- readLines("stdin", n=1)
+print("Address")
+address <- readLines("stdin", n=1)
+print("Phone number")
+phone_number <- readLines("stdin", n=1)
+print("Check your information")
+print(name)
+print(address)
+print(phone_number)
+
+#Q7
+print("How do you want to pay this order?")
+print("1.Credit card, 2.Online QR code, 3.Cash")
+payment <- c("Credit card", "Online QR code","Cash")
+action_payment <- readLines("stdin", n=1)
+print(paste("OK,", payment[as.numeric(action_payment)]))
+print("Order will delivery in 30 minutes")
+print("Thank you for your order, hope you enjoy this meal.")
+
+#Q8
+print("Please rating this application")
+print("1, 2, 3, 4, 5")
+payment <- readLines("stdin", n=1)
+
