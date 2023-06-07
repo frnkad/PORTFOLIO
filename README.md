@@ -1,6 +1,6 @@
 # PORTFOLIO
 
-SQL Databases 
+#SQL Databases 
   - PIZZA ORDERING - Utilize query and subquery to analyze data
 
 Python 
