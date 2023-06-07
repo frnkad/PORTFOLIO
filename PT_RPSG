@@ -1,0 +1,46 @@
+print("Pao Ying Chub game!") 
+
+Choices = ['Rock', 'Paper', 'Scissors']
+
+print("Which one do you choose?")
+print("[1]Rock \n[2]Paper \n[3]Scissors")
+print("[000]Stop playing game.")
+
+#While Loop
+count = 0
+score = 0
+
+while True:
+
+  you = input("Your choice is: ")
+
+  if you == '000':
+    break
+  elif int(you) == 0 or int(you) > 3:
+    continue
+  else: you = int(you)
+
+  you_str = Choices[you-1]
+  print(f"You choose: {Choices[you-1]}")
+
+  import random
+  bot = random.choice(Choices) 
+  print(f"Bot choose: {bot}")
+
+  if bot == you_str:
+    print("Draw")
+  elif bot == 'Rock' and you_str == 'Paper':
+    print("You win") 
+    score += 1
+  elif bot == 'Paper' and you_str == 'Scissors':
+    print("You win") 
+    score += 1
+  elif bot == 'Scissors' and you_str == 'Rock':
+    print("You win") 
+    score += 1
+  else: print("You lose")
+
+  count += 1
+
+print(f"Total rounds: {count}")
+print(f"Your score: {score}")
