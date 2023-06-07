@@ -1,0 +1,98 @@
+print("Username:")
+username <- as.character(readLines("stdin", n=1))
+print(paste("Hi,",username))
+print("This is Pao Ying Chub Game")
+print("Game Rules")
+print("Select the item to play by the following condition")
+print("Rock beats scissors, but loses to paper.")
+print("Scissors beats paper, but loses to rock.")
+print("Paper beats rock, but loses to scissors.")
+
+
+a <- 1
+while
+  (a > 0) {
+print("[1]Rock [2]Paper [3]Scissors")
+print("Let's play Pao Ying Chub!")
+print("if you want to stop this game just type the word 'stop'")
+
+n <- 1
+s <- 0
+b <- 0
+d <- 0
+
+while
+  (n > 0) {
+  
+#bot
+botchoice <- c("Rock", "Paper", "Scissors")
+botnumber <- c(1,2,3)
+bot <- sample(botnumber, size=1)
+#print(paste("Bot choose: ", botchoice[bot]))
+
+
+#input from user
+game <- c("Rock", "Paper", "Scissors")
+
+user <- readLines("stdin", n=1) 
+if (user == "stop") {break}
+user <- as.numeric(user)
+print(paste("You choose: ", game[user] ))
+
+#showbotchoose
+print(paste("Bot choose: ", botchoice[bot]))
+  
+#condition
+if (user==1 & bot==2) {
+  print("You win!")
+} else if (user==2 & bot==3) {
+  print("You win!")
+} else if (user==3 & bot==1) {
+  print("You win!")
+} else if (user==1 & bot==1) {
+  print("draw")
+} else if (user==2 & bot==2) {
+  print("draw")
+} else if (user==3 & bot==3) {
+  print("draw")
+} else if (user > 3) {
+  print("Not counting point")
+} else {print("you lose")}
+  
+  n <- n+1
+
+#user point
+if (user==1 & bot==2) {s <- s+1}
+if (user==2 & bot==3) {s <- s+1}
+if (user==3 & bot==1) {s <- s+1}
+
+#bot point
+if (user==2 & bot==1) {b <- b+1}
+if (user==3 & bot==2) {b <- b+1}
+if (user==1 & bot==3) {b <- b+1}
+  
+#draw
+if (user==1 & bot==1) {d <- d+1}
+if (user==2 & bot==2) {d <- d+1}
+if (user==3 & bot==3) {d <- d+1} 
+  }
+
+print(paste("total round: ", n-1))
+print(paste("Your point: " , s))
+print(paste("Bot point:", b))
+print(paste("Draw:", d))
+
+if (s > b) {
+  print("YOU WIN!")
+} else if (s < b) {
+  print("YOU LOSE")
+} else {print("DRAW")}
+
+print("Do you want to play again?")
+print("Press [1]YES [2]NO")
+playagain <- as.numeric(readLines("stdin", n=1))
+
+if (playagain == 2) {break} 
+  
+}
+print("See you soon")
