@@ -1,7 +1,7 @@
 # PORTFOLIO
 
-[SQL Databases](www.google.co.th) 
-  - PIZZA ORDERING - Utilize query and subquery to analyze data
+SQL Databases
+  - [PIZZA ORDERING](https://github.com/frnkad/PORTFOLIO/blob/e52a7ac061b4caa63d7d1defbd09f9dac080a2c2/SQL) - Utilize query and subquery to analyze data
 
 Python 
   - Apply Pandas to analyze sale of department store
