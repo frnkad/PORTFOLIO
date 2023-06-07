@@ -1,0 +1,43 @@
+class ATM:
+    def __init__ (self, name, balance):
+      self.name = name
+      self.balance = balance
+
+    def check_balance(self):
+      message = f"Account: {self.name}, Balance: {self.balance}"
+      print(message)
+
+    def deposit(self, money):
+      self.balance += money
+      print(f"New balance: {self.balance}")
+      print("Deposit Successfully.")
+    
+    def change_name(self):
+      print(f"Your account name: {self.name}")
+      new_acc_name = input("Enter your new account name: ")
+      print(new_acc_name)
+      print("Your account name has been changed")
+
+    def withdraw(self, money):
+      self.balance -= money
+      print("Withdraw successfully")
+      print(f"Balance: {self.balance}")
+      
+    def transfer(self, money):
+      someone = input("Enter account ID: ")
+      self.balance -= money
+      print("Transfer Successfully.")
+      print(f"Balance: {self.balance}")
+      print("Please do not forget the card")
+    
+    def pay_bill(self, money):
+      print("Service fee: 10")
+      print(f"Total: {money+10}")
+      print("[1]Pay the bill. \n[2]Cancel")
+      pay = int(input())
+      if pay == 1:
+        print("Successfully")
+        self.balance -= money+10
+      print(f"balance: {self.balance}") 
+
+scb = ATM("Dora", 15000)
